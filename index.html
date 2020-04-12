@@ -7,7 +7,7 @@
         <title>COVID-19: Live Updates</title>
         <link rel="icon" 
         type="image/png" 
-        href="/favicon.png">
+        href="favicon.png">
         <style>
 /* GENERAL */
 .maincounter-number {
@@ -272,7 +272,7 @@ fetch(proxy + url)
 }
 $(document).ready(function(){
 
-    getData();
+   setInterval(getData, 60000);
 
 });
 </script>
