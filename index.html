@@ -112,7 +112,7 @@ body {
 var url = "https://www.worldometers.com/coronavirus";
 var proxy = ""; // Maybe https://cors-anywhere.herokuapp.com/ for CORS?
 function getData() {
-fetch(proxyurl + url)
+fetch(proxy + url)
   .then(response => response.text())  
     .then(html => {
     // console.log(html);
