@@ -1,0 +1,129 @@
+<html>
+    <head>
+        <title>COVID-19: Live Updates</title>
+
+        <style>
+          .row:not(:nth-child(2)), 
+.navbar, footer, .container > div:nth-child(5), 
+.container > div:nth-child(2) > .col-md-4, 
+.container > div:nth-child(2) > .col-md-8 > .content-inner > div:nth-child(6),
+.container > div:nth-child(2) > .col-md-8 > .content-inner > div:nth-child(8),
+.container > div:nth-child(2) > .col-md-8 > .content-inner > div:nth-child(n+11)
+ {
+    display:none!important;
+}
+
+.container > div:nth-child(2) > .col-md-8 {
+    width:100%;
+}
+.content-inner {
+    width:400px;
+    margin:0 auto;
+    background:#001100;
+    padding-bottom:20px;
+    border-radius:12px;
+    
+}
+
+/* PAGE TITLE */
+.container > div:nth-child(2) > .col-md-8 > .content-inner > div:nth-child(4) {
+    color:#ccc;
+    font-weight:bold;
+    text-shadow:1px 1px 12px rgba(0,0,0,.5);
+    width:400px;
+    margin:0 auto;
+    margin-top:50px;
+    border-radius:12px 12px 0 0;
+    background: linear-gradient(180deg, #222 0%, #001100 100%)
+}
+
+/* LAST UPDATED */
+.container > div:nth-child(2) > .col-md-8 > .content-inner > div:nth-child(5) {
+    width:400px;
+    margin:0 auto;
+    padding:8px 5px;
+    font-size:16px!important;
+    color:#ccc!important;
+}
+
+/* TITLES */
+.container h1 {
+    margin:0 auto;
+    font-size:26px!important;
+    color:white!important;
+}
+
+/* NUMBER BOXES */
+.content-inner > #maincounter-wrap
+{
+   padding-top:0px;
+   margin-top:4px!important;
+   padding-bottom:20px;
+   border-bottom:1px solid rgba(0,0,0,.5);
+}
+.content-inner > div:nth-child(10) {
+   border-bottom:0!important;
+}
+.content-inner > div:nth-child(7) > .maincounter-number,
+.content-inner > div:nth-child(9) > .maincounter-number,
+.content-inner > div:nth-child(10) > .maincounter-number
+ {
+    width:350px;
+    margin:0 auto;
+    margin-top:4px;
+    border-radius:12px;
+    box-shadow:0 0 12px rgba(0,0,0,.5) inset;
+    box-shadow:0 0 20px rgba(0,0,0,.75);
+    border:4px solid rgba(255,255,255,.9)
+}
+
+.content-inner > div:nth-child(7) > .maincounter-number > span,
+.content-inner > div:nth-child(9) > .maincounter-number > span,
+.content-inner > div:nth-child(10) > .maincounter-number > span
+{
+    color:#fff!important;
+    text-shadow:2px 2px 1px rgba(0,0,0,.5);
+
+}
+
+/* TOTAL CASES */
+.content-inner > div:nth-child(7) > .maincounter-number {
+    background:#000;
+}
+/* DEATHS */
+.content-inner > div:nth-child(9) > .maincounter-number {
+    background:red;
+}
+/* RECOVERED */
+.content-inner > div:nth-child(10) > .maincounter-number {
+    background:green;
+}
+
+body {
+    background:#000;
+
+}  
+        </style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+    </head>
+    <body id="content">
+    </body>
+    <script>
+var url = "https://www.worldometers.com/coronavirus";
+var proxy = ""; // Maybe https://cors-anywhere.herokuapp.com/ for CORS?
+function getData() {
+fetch(proxyurl + url)
+  .then(response => response.text())  
+    .then(html => {
+    // console.log(html);
+  document.getElementById('content').innerHTML = html;
+})
+.catch((err) => console.log("Can’t access " + url + " response. Blocked by browser?" + err));
+}
+$(document).ready(function(){
+
+    getData();
+
+});
+</script>
+</html>
