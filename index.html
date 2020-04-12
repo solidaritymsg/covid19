@@ -117,7 +117,7 @@ fetch(proxy + url)
     .then(html => {
     // console.log(html);
     var body = html.match(/<body[^>]*>([\w|\W]*)<\/body>/im);
-  document.getElementById('content').innerHTML = body;
+  document.getElementById('content').innerHTML = body[1];
 })
 .catch((err) => console.log("Can’t access " + url + " response. Blocked by browser?" + err));
 }
