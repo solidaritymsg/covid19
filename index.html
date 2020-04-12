@@ -271,7 +271,7 @@ fetch(proxy + url)
 .catch((err) => console.log("Can’t access " + url + " response. Blocked by browser?" + err));
 }
 $(document).ready(function(){
-
+   getData();
    setInterval(getData, 60000);
 
 });
