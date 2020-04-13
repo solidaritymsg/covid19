@@ -8,19 +8,25 @@
         <link rel="icon" 
         type="image/png" 
         href="favicon.png">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.webticker/3.0.0/jquery.webticker.min.js" integrity="sha256-IVrqNY6kQnv5KTJD8oIyyRv1IueSfy6cKmbXn4GCGY4=" crossorigin="anonymous"></script>
+<style>
+
+</style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.webticker/3.0.0/jquery.webticker.min.js" integrity="sha256-IVrqNY6kQnv5KTJD8oIyyRv1IueSfy6cKmbXn4GCGY4=" crossorigin="anonymous"></script>
 </head>
 <body>
 <div class="ticker"><ticker></ticker></div>
 <script>
     var url = "https://thedextazlab.herokuapp.com/users/1/web_requests/88/solidarity.xml";
-
 $(document).ready(function(){
-$("ticker").webTicker({
+/*var ticker = $("ticker").webTicker({
 	rssurl: url, 
 	rssfrequency:10
 });
+var timer = setInterval(function(){
+    
+}, 60000);*/
 });
 </script>
 </body>
