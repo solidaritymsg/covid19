@@ -18,8 +18,18 @@
 <body>
 <div class="ticker"><ticker></ticker></div>
 <script>
-    var url = "https://thedextazlab.herokuapp.com/users/1/web_requests/88/solidarity.xml";
+    var url = "https://thedextazlab.herokuapp.com/users/1/web_requests/88/solidarity.json";
+    function fetchMessages(url){
+        var html = ""
+        $.getJSON(url, function(data){
+            for(i=0; i < data.items.length; i++){
+                html += '<li data-update="item' + i + '">' + data.items[i].msg + '</li>';
+            }
+            return html;
+        });
+    }
 $(document).ready(function(){
+    
 /*var ticker = $("ticker").webTicker({
 	rssurl: url, 
 	rssfrequency:10
