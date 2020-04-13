@@ -14,7 +14,8 @@
         font-family: 'Roboto', sans-serif;
     }
     .ticker {
-        display:none;
+        opacity:0;
+        transition: all 0.5s ease-in-out;
     }
 </style>
 
@@ -33,14 +34,18 @@
             }
         });
     }
+    function updateMessages(){
+        $('ticker').webTicker('update', html, 'swap', true, false);
+    }
 $(document).ready(function(){
     fetchMessages(url);
-    $('.ticker').fadeIn();
+    $('ticker').html(html);
     $('ticker').webTicker();
+    setTimeout(function(){$('.ticker').css({"opacity":"1"});}, 1000);
     var timer = setInterval(function(){
         fetchMessages(url);
         setTimeout(function(){
-            $('ticker').webTicker('update', html, 'swap', true, false);
+            updateMessages();
         }, 5000);  
     }, 55000);
 });
