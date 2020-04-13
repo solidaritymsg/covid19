@@ -25,10 +25,12 @@
             for(i=0; i < data.items.length; i++){
                 html += '<li data-update="item' + i + '">' + data.items[i].msg + '</li>';
             }
-            return html;
+            
         });
+        return html;
     }
 $(document).ready(function(){
+    
     
 /*var ticker = $("ticker").webTicker({
 	rssurl: url, 
