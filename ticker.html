@@ -25,7 +25,8 @@
 <body>
 <div class="ticker"><ticker></ticker></div>
 <script>
-    var url = "https://thedextazlab.herokuapp.com/users/1/web_requests/88/solidarity.json";
+    var proxy = "https://cors-anywhere.herokuapp.com/";
+    var url = proxy + "https://thedextazlab.herokuapp.com/users/1/web_requests/88/solidarity.json";
     var html = ""
     function fetchMessages(url){
         $.getJSON(url, function(data){
