@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+        <title>COVID-19: NEWS TICKER</title>
+        <link rel="icon" 
+        type="image/png" 
+        href="favicon.png">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.webticker/3.0.0/jquery.webticker.min.js" integrity="sha256-IVrqNY6kQnv5KTJD8oIyyRv1IueSfy6cKmbXn4GCGY4=" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="ticker"><ticker></ticker></div>
+<script>
+    var url = "https://thedextazlab.herokuapp.com/users/1/web_requests/88/solidarity.json";
+
+$(document).ready(function(){
+$("ticker").webTicker({
+	rssurl: url, 
+	rssfrequency:10
+});
+});
+</script>
+</body>
+</html>
