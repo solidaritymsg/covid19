@@ -8,6 +8,24 @@
         <link rel="icon" 
         type="image/png" 
         href="favicon.png">
+<style>
+    /* WIDE WIDGET */
+    .container {
+    height: 200px;
+    width: 1900px;
+    display: flex;
+}
+
+.content-inner {
+    min-height: 200px;
+    width: 1900px;
+    display: flex;
+}
+
+#content {
+    width: 1900px;
+}    
+</style>
         <style>
 /* GENERAL */
 .maincounter-number {
@@ -246,10 +264,9 @@ html {
 }
 
 body {
-    width: 500px;
-    background: transparent!important;
-    height: 600px;
-}
+    background:transparent!important;
+
+}  
         </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
     </head>
@@ -271,9 +288,10 @@ fetch(proxy + url)
 })
 .catch((err) => console.log("Can’t access " + url + " response. Blocked by browser?" + err));
 }
+var timer;
 $(document).ready(function(){
    getData();
-   setInterval(getData, 60000);
+   timer = setInterval(getData, 60000);
 
 });
 </script>
